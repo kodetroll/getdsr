@@ -11,8 +11,10 @@ INSTALLING
 
 or
 
+```
   make
   sudo make install
+```
 
 Copyright (C) 2015 KB4OID Labs, A division of Kodetroll Heavy Industries
 
