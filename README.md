@@ -11,7 +11,7 @@ INSTALLING
   'gcc -o getdsr getdsr.c -lezV24'
 ```
 
-- or -
+ --- or ---
 
 ```
   make
