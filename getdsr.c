@@ -26,7 +26,21 @@ unsigned int OpenFlags=V24_STANDARD;
 int DsrCurrState=V24_DSRCTS_UNKNOWN;
 
 void dumpErrorMessage ( int rc );
+void version(void)
+{
+   printf("Version X.X\n");
+}
+void usage(char * name)
+{
+   printf("\n");
+   printf("Usage: %s [options]\n",name);
+   printf("\n");
+   printf("   -p       Set serial port device.\n");
+   printf("   -h       Print help and exit.\n");
+   printf("   -v       Print version info and exit.\n");
+   printf("\n");
 
+}
 int main( int argc, char* argv[] )
 {
     int HelpOnly=0;
@@ -38,7 +52,7 @@ int main( int argc, char* argv[] )
     optind=1;     /* start without prog-name */
     do
     {
-        switch( getopt(argc,argv,"lnHNrxdhwbp:t:") )
+        switch( getopt(argc,argv,"hvp:") )
         {
 	    case 'p':
 		if ( optarg )
@@ -48,25 +62,13 @@ int main( int argc, char* argv[] )
 		    fprintf(stderr,"info: use port `%s'\n",PortName);
 		}
 		break;
-	    case 't':
-		break;
-	    case 'l':
-		break;
-	    case 'n':
-		break;
-	    case 'b':
-		break;
-	    case 'r':
-		break;
-	    case 'x':
-		break;
-	    case 'd':
-		break;
-	    case 'H':
+            case 'v':
+		version();
+		exit(1);
 		break;
             case 'h':     // user want's help
             case '?':     // getopt3() reports invalid option
-//                usage();
+                usage(argv[0]);
                 exit(1);
             default:
                 Done=1;
