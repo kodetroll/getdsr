@@ -7,9 +7,11 @@ and display it to the screen. Requires the ezV24 Serial Library to compile.
 INSTALLING
 ----------
 
+```
   'gcc -o getdsr getdsr.c -lezV24'
+```
 
-or
+- or -
 
 ```
   make
